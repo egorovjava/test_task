@@ -13,11 +13,15 @@ public class Receiver {
         this.messagesRepository = messagesRepository;
     }
 
-    public void receiveMessage(String message) {
-        System.out.println("Received message < " + message + " >");
+    MessageEntity insertMessage(String message) {
         MessageEntity messageEntity = new MessageEntity();
         messageEntity.setMessage(message);
-        MessageEntity newMessage = messagesRepository.save(messageEntity);
+        return messagesRepository.save(messageEntity);
+    }
+
+    public void receiveMessage(String message) {
+        System.out.println("Received message < " + message + " >");
+        MessageEntity newMessage = insertMessage(message);
         if(newMessage != null) {
             System.out.println("Message \"" + newMessage.getMessage() + "\" saved with id " + newMessage.getId());
         } else {

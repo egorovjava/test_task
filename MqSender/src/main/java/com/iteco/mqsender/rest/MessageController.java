@@ -27,7 +27,6 @@ public class MessageController {
 
     @RequestMapping(path="/", method=POST)
     public void sendMessage(@RequestBody String message) {
-        System.out.println(message);
         try {
             System.out.println("Sending message: " + message);
             rabbitTemplate.convertAndSend(Application.topicExchangeName, "foo.bar.buz", message);
