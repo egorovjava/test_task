@@ -5,8 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.iteco</groupId>
-    <artifactId>spting-boot-app</artifactId>
+    <artifactId>test_task</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>MqSender</module>
+        <module>MqReceiver</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

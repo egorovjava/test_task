@@ -1,15 +1,17 @@
-package com.iteco.springbootapp.controllers;
+package com.iteco.mqsender.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
-public class FirstController {
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
-    @RequestMapping("/")
+@Controller
+public class MainController {
+
+    @RequestMapping(path="/", method=GET)
     @ResponseBody
-    public String getString() {
+    public String homeGet() {
         StringBuilder responseBuilder = new StringBuilder();
         responseBuilder.append("<!DOCTYPE html>\n");
         responseBuilder.append("<html>\n");
@@ -31,4 +33,5 @@ public class FirstController {
         responseBuilder.append("</html>");
         return responseBuilder.toString();
     }
+
 }
