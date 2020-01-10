@@ -25,11 +25,13 @@ public class MainController {
                 "}\n");
         responseBuilder.append("</script>\n");
         responseBuilder.append("</head>\n");
+        responseBuilder.append("<body>\n");
         responseBuilder.append("<input id='txt' type='text' size='100' />\n");
         responseBuilder.append("<br />\n");
         responseBuilder.append("<button type='submit' onclick='userAction()'>");
         responseBuilder.append("send");
         responseBuilder.append("</button>\n");
+        responseBuilder.append("</body>\n");
         responseBuilder.append("</html>");
         return responseBuilder.toString();
     }
